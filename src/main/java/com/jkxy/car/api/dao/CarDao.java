@@ -25,4 +25,7 @@ public interface CarDao {
 
     @Insert("insert into carMessage(carName,carType,price,carSeries) values(#{carName},#{carType},#{price},#{carSeries})")
     void insertCar(Car car);
+
+    @Update("update carMessage set carQuantity = carQuantity -#{carQuantity} where id = #{id}")
+    void purchaseCar(Car car);
 }

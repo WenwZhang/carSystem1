@@ -7,7 +7,7 @@ public class Car {
     private String carType;
     private String price;
     private String carSeries;
-
+    private int carQuantity;
     public int getId() {
         return id;
     }
@@ -46,6 +46,14 @@ public class Car {
 
     public void setCarSeries(String carSeries) {
         this.carSeries = carSeries;
+    }
+
+    public int getCarQuantity() {
+        return carQuantity;
+    }
+
+    public void setCarQuantity(int carQuantity) {
+        this.carQuantity = carQuantity;
     }
 
     @Override

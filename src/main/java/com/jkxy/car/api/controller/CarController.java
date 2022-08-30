@@ -15,7 +15,6 @@ import java.util.List;
 public class CarController {
     @Autowired
     private CarService carService;
-    //test git 11
     /**
      * 查询所有
      *
@@ -85,4 +84,21 @@ public class CarController {
         carService.insertCar(car);
         return JSONResult.ok();
     }
+    /**
+     * 通过id购买汽车
+     */
+    @PostMapping("purchaseCar")
+    public JSONResult purchaseCar(Car car){
+        carService.purchaseCar(car);
+        return JSONResult.ok();
+    }
+
+    /**
+     * 实现某个品牌车辆模糊查询
+     */
+    @PostMapping("searchBrandCar")
+    public JSONResult searchBrandCar(Car car){
+        return JSONResult.ok();
+    }
+
 }
