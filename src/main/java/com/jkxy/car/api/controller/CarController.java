@@ -1,6 +1,7 @@
 package com.jkxy.car.api.controller;
 
 import com.jkxy.car.api.pojo.Car;
+import com.jkxy.car.api.pojo.CarInfo;
 import com.jkxy.car.api.service.CarService;
 import com.jkxy.car.api.utils.JSONResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -88,17 +89,18 @@ public class CarController {
      * 通过id购买汽车
      */
     @PostMapping("purchaseCar")
-    public JSONResult purchaseCar(Car car){
-        carService.purchaseCar(car);
-        return JSONResult.ok();
+    public JSONResult purchaseCar( Car car){
+
+        return carService.purchaseCar(car);
     }
 
     /**
      * 实现某个品牌车辆模糊查询
      */
     @PostMapping("searchBrandCar")
-    public JSONResult searchBrandCar(Car car){
-        return JSONResult.ok();
+    public JSONResult searchBrandCar(CarInfo carInfo){
+        List<Car> cars = carService.fuzzyQueryByCarName(carInfo);
+        return JSONResult.ok(cars);
     }
 
 }

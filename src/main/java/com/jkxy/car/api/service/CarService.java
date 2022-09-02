@@ -1,6 +1,8 @@
 package com.jkxy.car.api.service;
 
 import com.jkxy.car.api.pojo.Car;
+import com.jkxy.car.api.pojo.CarInfo;
+import com.jkxy.car.api.utils.JSONResult;
 
 import java.util.List;
 
@@ -19,5 +21,7 @@ public interface CarService {
 
     void insertCar(Car car);
 
-    void purchaseCar(Car car);
+    JSONResult purchaseCar(Car car);
+
+    List<Car> fuzzyQueryByCarName(CarInfo carInfo);
 }
